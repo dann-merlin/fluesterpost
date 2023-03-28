@@ -49,6 +49,7 @@ def transcribe(file_path, lang):
     try:
         output = subprocess.check_output(cmd, cwd=WHISPERCPP_DIR, stderr=subprocess.DEVNULL)
         response = output.strip()
+        return response
     except subprocess.CalledProcessError as e:
         return None
 
